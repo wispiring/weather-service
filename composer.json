@@ -1,0 +1,30 @@
+{
+    "name": "wispiring/weather-service",
+    "description": "The Wispiring weather service",
+    "homepage": "https://github.com/wispiring/weather-service",
+    "keywords": ["wispiring", "weather", "php", "service"],
+    "type": "application",
+    "license": "MIT",
+    "authors": [{
+        "name": "Hongliang",
+        "email": "code@wispiring.com",
+        "role": "Development"
+    }],
+    "require": {
+        "silex/silex": "dev-master",
+        "symfony/yaml": "~2.7",
+        "symfony/config": "~2.7",
+        "symfony/security": "~2.7",
+        "symfony/console": "~2.7",
+        "symfony/routing": "~2.7",
+        "twig/twig": "~1.22",
+        "symfony/twig-bridge": "~2.7",
+        "dbtk/schema-loader": "~2.1",
+        "cmfcmf/openweathermap-php-api": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wispiring\\WeatherService\\": "src/"
+        }
+    }
+}

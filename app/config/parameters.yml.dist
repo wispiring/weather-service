@@ -1,0 +1,18 @@
+baseurl: /weather
+debug: true
+theme: default
+security:
+    encoder: PlaintextPasswordEncoder
+    providers:
+        JsonFile: { path: app/config/security.json }
+database:
+    my_db_name:
+        host: localhost
+        username: my_db_username
+        password: my_db_password
+weather:
+    providers:
+        openweathermap:
+            api_key: your_open_weather_map_api_key
+        weathergov:
+            api_key: your_weather_gov_api_key

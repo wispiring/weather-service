@@ -1,0 +1,10 @@
+{
+	"users": {
+		"wispiring": {
+			"id": 1,
+			"username": "wispiring",
+			"password": "shenyang",
+			"roles": ["ROLE_ADMIN"]
+		}
+	}
+}

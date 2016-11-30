@@ -1,0 +1,13 @@
+admin_index:
+    path: /
+    defaults:  { _controller: Wispiring\WeatherService\Controller\AdminController::indexAction }
+
+api_index:
+    path: /api/v1
+    defaults:  { _controller: Wispiring\WeatherService\Controller\ApiController::indexAction }
+
+assets:
+    path: /assets/{file}
+    defaults: { _controller: Wispiring\WeatherService\Controller\AssetsController::serveAction }
+    requirements:
+        file: .+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+
+    <table name="place">
+        <column name="id" type="integer" unsigned="true" autoincrement="true" />
+        <column name="name" type="string" length="128" />
+        <column name="displayname" type="string" length="128" />
+        <column name="postalcode" type="string" length="32" />
+        <column name="country" type="string" length="32" />
+        <column name="countrycode" type="string" length="2" />
+        <column name="longitude" type="float" />
+        <column name="latitude" type="float" />
+
+        <index name="primary" primary="true" columns="id" />
+    </table>
+
+    <table name="current">
+        <column name="id" type="integer" unsigned="true" autoincrement="true" />
+        <column name="place_id" type="integer" comment="foreign key to place" />
+        <column name="stamp" type="integer" comment="time stamp" />
+        <column name="temperature_c" type="float" />
+        <column name="temperature_f" type="float" />
+        <column name="temperature_min_c" type="float" />
+        <column name="temperature_max_f" type="float" />
+        <column name="pressure" type="float" />
+        <column name="pressure_unit" type="string" length="6" />
+        <column name="humidity" type="integer" />
+        <column name="wind_speed" type="float" />
+        <column name="wind_unit" type="string" length="6" />
+        <column name="wind_direction" type="string" length="32" />
+        <column name="wind_description" type="string" length="128" />
+        <column name="sunrise" type="datetime" />
+        <column name="sunset" type="datetime" />
+        <column name="description" type="string" length="256" />
+        <column name="icon_url" type="string" length="512" />
+
+        <index name="primary" primary="true" columns="id" />
+        <index name="place" columns="place_id" />
+    </table>
+
+    <table name="forecast">
+        <column name="id" type="integer" unsigned="true" autoincrement="true" />
+        <column name="place_id" type="integer" comment="foreign key to place" />
+        <column name="date_int" type="integer" comment="Date in the form of integer for easy query and indexing" />
+        <column name="temperature_min_c" type="float" />
+        <column name="temperature_max_f" type="float" />
+        <column name="description" type="string" length="256" />
+        <column name="icon_url" type="string" length="512" />
+
+        <index name="primary" primary="true" columns="id" />
+        <index name="place" columns="place_id" />
+    </table>
+
+</schema>

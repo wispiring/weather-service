@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__.'/../vendor/autoload.php');
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('Wispiring weather toolkit', '1.0.0');
+$application->setCatchExceptions(false);
+$application->add(new \Wispiring\WeatherService\Command\FetchCommand());
+$application->run();
